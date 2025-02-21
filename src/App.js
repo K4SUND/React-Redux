@@ -1,17 +1,13 @@
 
 import './App.css';
-import UseEffectHook from './hooks/UseEffectHook.js';
-import UseRefHook from './hooks/UseRefHook.js';
-import UseStateHook from './hooks/UseStateHook.js';
-// import FileUpload from './FileUpload';
+import Button from './components/Button';
+
 
 function App() {
   return (
     <div className="App">
-      {/* <FileUpload/> */}
-      {/* <UseStateHook/> */}
-      {/* <UseEffectHook/> */}
-      <UseRefHook/>
+    <h1>Hello</h1>
+    <Button/>
 
     </div>
   );
