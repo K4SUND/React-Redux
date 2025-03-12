@@ -1,13 +1,36 @@
 
 import React, { Component } from 'react';
+import { fetchApiPosts, fetchPosts } from '../actions/postsAction';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-export default class Button extends Component {
+class Button extends Component {
   render() {
     return (
-    <div>
-        <button>Click Me</button>
-        
-    </div>
+      <div style={{
+        marginLeft: 20
+      }}>
+        <button
+          onClick={
+            () => {
+              this.props.fetchAllPostsAPI();
+            }
+
+          }>Click Me To Show Posts From Store</button>
+
+      </div>
     )
   }
-}
+};
+
+
+// connect
+
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
+    // fetchAllPosts: fetchPosts,
+    fetchAllPostsAPI: fetchApiPosts
+  }, dispatch);
+};
+
+export default connect(null, matchDispatchToProps)(Button);
